@@ -23,7 +23,7 @@ const Signup = () => {
        if(data.success){
         setUser(data.user || data);
         setIsloggedin(true)
-        navigate('/')
+        navigate('/home')
        }
        else{
         toast.error(data.message)
@@ -34,7 +34,7 @@ const Signup = () => {
        if(data.success){
         setUser(data.user || data);
         setIsloggedin(true)
-        navigate('/')
+        navigate('/home')
        }
        else{
         toast.error(data.message)
