@@ -70,7 +70,7 @@ const Home = () => {
       const { data } = await axios.post(`${backendUrl}/api/auth/logout`, {}, { withCredentials: true });
       if (data.success) {
         setIsloggedin(false);
-        navigate('/signup');
+        navigate('/');
       } else {
         toast.error(data.message);
       }
