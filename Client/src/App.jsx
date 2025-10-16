@@ -24,12 +24,9 @@ function App() {
     <>
       <div>
         <ToastContainer />
-        <Routes>
-          <Route path="/signup" element={<Signup />} />
-          <Route
-            path="/"
-            element={user ? <Home /> : <Navigate to="/signup" />}
-          />
+         <Routes>
+          <Route path="/" element={<Signup />} />
+          <Route path='/home' element={<Home/>}></Route>
         </Routes>
       </div>
     </>
