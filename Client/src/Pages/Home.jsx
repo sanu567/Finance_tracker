@@ -159,51 +159,21 @@ const Home = () => {
         <div className="w-full max-w-2xl px-5 py-4 bg-slate-100 mt-10 rounded shadow">
           <h2 className="text-3xl mb-5 text-center">Transactions</h2>
 
-         <div className="hidden md:grid grid-cols-4 font-semibold text-xl border-b-2 border-gray-400 pb-2">
-  <div className="text-center">Date</div>
-  <div className="text-center">Name</div>
-  <div className="text-center">Amount</div>
-  <div className="text-center">Type</div>
-</div>
-
-<ul className="space-y-4 mt-4">
-  {transactions.length > 0 ? (
-    transactions.map((t) => (
-      <li
-        key={t._id}
-        className="grid grid-cols-1 md:grid-cols-4 text-center border-b pb-2 gap-y-2"
-      >
-        <div>
-          <span className="md:hidden font-semibold">Date: </span>
-          {new Date(t.date).toLocaleDateString('en-IN', {
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-          })}
-        </div>
-        <div>
-          <span className="md:hidden font-semibold">Transaction: </span>
-          {t.name || t.category?.name || 'Unnamed'}
-        </div>
-        <div className={t.type === 'expense' ? 'text-red-500' : 'text-green-500'}>
-          <span className="md:hidden font-semibold">Amount: </span>
-          {t.type === 'expense' ? '-' : '+'}₹{t.amount}
-        </div>
-        <div>
-          <span className="md:hidden font-semibold">Type: </span>
-          {t.type}
-          <button
-            onClick={() => Delete(t._id)}
-            className="ml-2 md:ml-4 bg-red-600 rounded-md p-1 text-sm text-white"
-          >
-            Delete
-          </button>
-        </div>
-      </li>
-    ))
-  ) : (
-    <div className="text-center text-gray-500">No transactions</div>
-  )}
+     <div className="grid grid-cols-4 font-semibold text-xl border-b-2 border-gray-400 pb-2">
+       <div className="text-center">Date</div> 
+       <div className="text-center"> Name</div>
+       <div className="text-center">Amount</div>
+       <div className="text-center">Type</div>
+     </div>
+          
+<ul className="grid grid-cols-4 text-center gap-y-2 mt-4">
+  {transactions.length > 0 ? ( transactions.map((t) => ( <React.Fragment key={t._id}>
+    <li> {new Date(t.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' })} </li>
+    <li>{t.name || t.category?.name || 'Unnamed'}</li>
+    <li className={t.type === 'expense' ? 'text-red-500' : 'text-green-500'}> {t.type === 'expense' ? '-' : '+'}₹{t.amount} </li> 
+    <li>{t.type} <button onClick={()=>Delete(t._id)} className='ml-4 bg-red-600 rounded-md p-1 text-sm'>Delete</button></li>
+  </React.Fragment> )) )
+  : ( <div className="col-span-4 text-center text-gray-500">No transactions</div> )} 
 </ul>
 
          
