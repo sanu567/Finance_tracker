@@ -161,7 +161,7 @@ const Home = () => {
 
          <div className="hidden md:grid grid-cols-4 font-semibold text-xl border-b-2 border-gray-400 pb-2">
   <div className="text-center">Date</div>
-  <div className="text-center">Transactions name</div>
+  <div className="text-center">Name</div>
   <div className="text-center">Amount</div>
   <div className="text-center">Type</div>
 </div>
