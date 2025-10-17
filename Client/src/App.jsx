@@ -7,19 +7,7 @@ import Home from './Pages/Home'
 
 
 function App() {
-   // Initialize user from localStorage
-  const storedUser = JSON.parse(localStorage.getItem('user'));
-  const [user, setUser] = useState(storedUser || null);
-
-  // Keep localStorage in sync when `user` changes
-  useEffect(() => {
-    if (user) {
-      localStorage.setItem('user', JSON.stringify(user));
-    } else {
-      localStorage.removeItem('user');
-    }
-  }, [user]);
-
+ 
   return (
     <>
       <div>
