@@ -21,7 +21,7 @@ export const Register = async (req,resp)=>{
         resp.cookie('token',token,{
             httpOnly:true,
             secure:true,
-            sameSite:none,
+            sameSite:'None',
             maxAge:7*24*60*60*1000
         });
         return resp.json({success:true,message:"New user is created"})
@@ -48,7 +48,7 @@ export const login = async (req,resp)=>{
         resp.cookie('token',token,{
             httpOnly:true,
             secure:true,
-            sameSite:'lax',
+            sameSite:'None',
             maxAge:7*24*60*60*1000
         });
         return resp.json({success:true,message:"logining successfully"})
