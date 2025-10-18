@@ -1,7 +1,7 @@
 A fully functional, user‑friendly finance tracking web application built using the MERN stack (MongoDB, Express.js, React, Node.js).
 It enables users to track their income and expenses in real time, gain insights into their spending habits, and make better budgeting decisions.
 
-🎯 Key Features
+🎯 Key Features:
 User Authentication & Security – Secure sign‐up and login via JSON Web Tokens (JWT), with password hashing (bcrypt) on the backend.
 Transaction Management – Add income or expense entries, edit or delete them as needed.
 Categorisation & Filtering – Tag transactions with custom categories (e.g., Food, Travel, Salary) and filter/view by date range or category to drill down into your finances.
